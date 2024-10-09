@@ -23,10 +23,6 @@ public class GamePanel extends JPanel implements Runnable
     KeyInput keyI = new KeyInput();
     player player = new player(this,keyI);
 
-    //player default positions
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
 
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
