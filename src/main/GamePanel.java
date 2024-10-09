@@ -1,6 +1,7 @@
 package main;
 
 import entity.player;
+import tile.tileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ public class GamePanel extends JPanel implements Runnable
     //FPS set
     final int FPS = 60;
 
+    tileManager tileM = new tileManager(this);
     Thread gameThread;
     KeyInput keyI = new KeyInput();
     player player = new player(this,keyI);
@@ -76,6 +78,7 @@ public class GamePanel extends JPanel implements Runnable
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
+        tileM.draw(g2);
         player.draw(g2);
         g2.dispose();
     }
